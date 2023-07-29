@@ -1,0 +1,1043 @@
+embedding/cw.c:135:5: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+    vocab = (struct vocab_word *)realloc(vocab, vocab_max_size * sizeof(struct vocab_word));
+    ^
+embedding/cw.c:170:3: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+  vocab = (struct vocab_word *)realloc(vocab, (vocab_size + 1) * sizeof(struct vocab_word));
+  ^
+embedding/cw.c:399:8: portability: Casting from double * to unsigned long * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i = *(uint64_t *) &y;
+       ^
+embedding/cw.c:401:8: portability: Casting between unsigned long * and double * which have an incompatible binary data representation. [invalidPointerCast]
+  y = *(double *) &i;
+       ^
+embedding/cw.c:411:9: portability: Casting from float * to unsigned int * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i  = *(uint32_t *) &y;
+        ^
+embedding/cw.c:413:9: portability: Casting between unsigned int * and float * which have an incompatible binary data representation. [invalidPointerCast]
+  y  = *(float *) &i;
+        ^
+embedding/cw.c:346:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/cw.c:345:5: note: a is assigned
+  a = posix_memalign((void **)&syn0, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/cw.c:346:5: note: a is overwritten
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/cw.c:370:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/cw.c:346:5: note: a is assigned
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/cw.c:370:10: note: a is overwritten
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/cw.c:351:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/cw.c:349:7: note: a is assigned
+    a = posix_memalign((void **)&syn1, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/cw.c:351:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/cw.c:356:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)hidden_size * sizeof(real));
+      ^
+embedding/cw.c:355:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg, 128, (long long)hidden_size * sizeof(real));
+      ^
+embedding/cw.c:356:7: note: a is overwritten
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)hidden_size * sizeof(real));
+      ^
+embedding/cw.c:362:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&hidden, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/cw.c:356:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)hidden_size * sizeof(real));
+      ^
+embedding/cw.c:362:7: note: a is overwritten
+    a = posix_memalign((void **)&hidden, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/cw.c:363:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/cw.c:362:7: note: a is assigned
+    a = posix_memalign((void **)&hidden, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/cw.c:363:7: note: a is overwritten
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/cw.c:364:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < input_size; a++) for (b = 0; b < hidden_size; b++) {
+           ^
+embedding/cw.c:363:7: note: a is assigned
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/cw.c:364:12: note: a is overwritten
+    for (a = 0; a < input_size; a++) for (b = 0; b < hidden_size; b++) {
+           ^
+embedding/cw.c:76:14: style: The scope of the variable 'ch' can be reduced. [variableScope]
+  int a = 0, ch;
+             ^
+embedding/cw.c:181:16: style: The scope of the variable 'hash' can be reduced. [variableScope]
+  unsigned int hash;
+               ^
+embedding/cw.c:202:16: style: The scope of the variable 'b' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+               ^
+embedding/cw.c:202:19: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+                  ^
+embedding/cw.c:269:16: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, i;
+               ^
+embedding/cw.c:421:8: style: The scope of the variable 'val1' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+       ^
+embedding/cw.c:421:14: style: The scope of the variable 'val2' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+             ^
+embedding/cw.c:421:20: style: The scope of the variable 'val3' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                   ^
+embedding/cw.c:421:26: style: The scope of the variable 'val4' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                         ^
+embedding/cw.c:422:8: style: The scope of the variable 'val5' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+       ^
+embedding/cw.c:422:14: style: The scope of the variable 'val6' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+             ^
+embedding/cw.c:422:20: style: The scope of the variable 'val7' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                   ^
+embedding/cw.c:422:26: style: The scope of the variable 'val8' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                         ^
+embedding/cw.c:465:8: style: The scope of the variable 'val1' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+       ^
+embedding/cw.c:465:14: style: The scope of the variable 'val2' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+             ^
+embedding/cw.c:465:20: style: The scope of the variable 'val3' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                   ^
+embedding/cw.c:465:26: style: The scope of the variable 'val4' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                         ^
+embedding/cw.c:466:8: style: The scope of the variable 'val5' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+       ^
+embedding/cw.c:466:14: style: The scope of the variable 'val6' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+             ^
+embedding/cw.c:466:20: style: The scope of the variable 'val7' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                   ^
+embedding/cw.c:466:26: style: The scope of the variable 'val8' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                         ^
+embedding/cw.c:870:14: style: The scope of the variable 'c' can be reduced. [variableScope]
+  long a, b, c, d;
+             ^
+embedding/cw.c:870:17: style: The scope of the variable 'd' can be reduced. [variableScope]
+  long a, b, c, d;
+                ^
+embedding/cw.c:871:9: style: The scope of the variable 'fo' can be reduced. [variableScope]
+  FILE *fo;
+        ^
+embedding/cw.c:205:14: style: Local variable 'binary' shadows outer variable [shadowVariable]
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/cw.c:40:5: note: Shadowed declaration
+int binary = 0, cbow = 1, debug_mode = 2, window = 5, min_count = 5, num_threads = 12, min_reduce = 1;
+    ^
+embedding/cw.c:205:14: note: Shadow variable
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/cw.c:925:25: style: Local variable 'iter' shadows outer variable [shadowVariable]
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/cw.c:43:51: note: Shadowed declaration
+long long train_words = 0, word_count_actual = 0, iter = 5, file_size = 0, classes = 0;
+                                                  ^
+embedding/cw.c:925:25: note: Shadow variable
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/glove.c:183:85: error: Memory leak: word [memleak]
+        if(fout == NULL) {fprintf(stderr, "Unable to open file %s.\n",save_W_file); return 1;}
+                                                                                    ^
+embedding/glove.c:199:93: error: Memory leak: word [memleak]
+            if(fgs == NULL) {fprintf(stderr, "Unable to open file %s.\n",save_gradsq_file); return 1;}
+                                                                                            ^
+embedding/glove.c:203:85: error: Memory leak: word [memleak]
+        if(fout == NULL) {fprintf(stderr, "Unable to open file %s.\n",save_W_file); return 1;}
+                                                                                    ^
+embedding/glove.c:206:83: error: Memory leak: word [memleak]
+        if(fid == NULL) {fprintf(stderr, "Unable to open file %s.\n",vocab_file); return 1;}
+                                                                                  ^
+embedding/glove.c:206:83: error: Resource leak: fout [resourceLeak]
+        if(fid == NULL) {fprintf(stderr, "Unable to open file %s.\n",vocab_file); return 1;}
+                                                                                  ^
+embedding/glove.c:231:5: error: Memory leak: word [memleak]
+    return 0;
+    ^
+embedding/glove.c:202:17: warning: Either the condition 'fout==NULL' is redundant or there is possible null pointer dereference: fout. [nullPointerRedundantCheck]
+        fprintf(fout, "%lld %d\n",vocab_size,vector_size);
+                ^
+embedding/glove.c:203:17: note: Assuming that condition 'fout==NULL' is not redundant
+        if(fout == NULL) {fprintf(stderr, "Unable to open file %s.\n",save_W_file); return 1;}
+                ^
+embedding/glove.c:202:17: note: Null pointer dereference
+        fprintf(fout, "%lld %d\n",vocab_size,vector_size);
+                ^
+embedding/glove.c:74:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&gradsq, 128, 2 * vocab_size * vector_size * sizeof(real)); // Might perform better than malloc
+      ^
+embedding/glove.c:69:4: note: a is assigned
+ a = posix_memalign((void **)&W, 128, 2 * vocab_size * vector_size * sizeof(real)); // Might perform better than malloc
+   ^
+embedding/glove.c:74:7: note: a is overwritten
+    a = posix_memalign((void **)&gradsq, 128, 2 * vocab_size * vector_size * sizeof(real)); // Might perform better than malloc
+      ^
+embedding/glove.c:174:18: style: The scope of the variable 'b' can be reduced. [variableScope]
+    long long a, b;
+                 ^
+embedding/glove.c:175:10: style: The scope of the variable 'format' can be reduced. [variableScope]
+    char format[20];
+         ^
+embedding/glove.c:178:11: style: The scope of the variable 'fid' can be reduced. [variableScope]
+    FILE *fid, *fout, *fgs;
+          ^
+embedding/glove.c:240:10: style: The scope of the variable 'total_cost' can be reduced. [variableScope]
+    real total_cost = 0;
+         ^
+embedding/glove.c:241:10: style: The scope of the variable 'total_cost_valid' can be reduced. [variableScope]
+    real total_cost_valid = 0;
+         ^
+embedding/glove.c:74:7: style: Variable 'a' is assigned a value that is never used. [unreadVariable]
+    a = posix_memalign((void **)&gradsq, 128, 2 * vocab_size * vector_size * sizeof(real)); // Might perform better than malloc
+      ^
+embedding/glove.c:240:21: style: Variable 'total_cost' is assigned a value that is never used. [unreadVariable]
+    real total_cost = 0;
+                    ^
+embedding/glove.c:241:27: style: Variable 'total_cost_valid' is assigned a value that is never used. [unreadVariable]
+    real total_cost_valid = 0;
+                          ^
+embedding/lbl.c:134:5: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+    vocab = (struct vocab_word *)realloc(vocab, vocab_max_size * sizeof(struct vocab_word));
+    ^
+embedding/lbl.c:169:3: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+  vocab = (struct vocab_word *)realloc(vocab, (vocab_size + 1) * sizeof(struct vocab_word));
+  ^
+embedding/lbl.c:398:8: portability: Casting from double * to unsigned long * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i = *(uint64_t *) &y;
+       ^
+embedding/lbl.c:400:8: portability: Casting between unsigned long * and double * which have an incompatible binary data representation. [invalidPointerCast]
+  y = *(double *) &i;
+       ^
+embedding/lbl.c:410:9: portability: Casting from float * to unsigned int * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i  = *(uint32_t *) &y;
+        ^
+embedding/lbl.c:412:9: portability: Casting between unsigned int * and float * which have an incompatible binary data representation. [invalidPointerCast]
+  y  = *(float *) &i;
+        ^
+embedding/lbl.c:345:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/lbl.c:344:5: note: a is assigned
+  a = posix_memalign((void **)&syn0, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/lbl.c:345:5: note: a is overwritten
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/lbl.c:369:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/lbl.c:345:5: note: a is assigned
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/lbl.c:369:10: note: a is overwritten
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/lbl.c:350:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/lbl.c:348:7: note: a is assigned
+    a = posix_memalign((void **)&syn1, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/lbl.c:350:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/lbl.c:355:4: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+ a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * hidden_size * sizeof(real));
+   ^
+embedding/lbl.c:354:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg, 128, (long long)vocab_size * hidden_size * sizeof(real));
+      ^
+embedding/lbl.c:355:4: note: a is overwritten
+ a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * hidden_size * sizeof(real));
+   ^
+embedding/lbl.c:357:9: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+ for (a = 0; a < vocab_size; a++) for (b = 0; b < hidden_size; b++){
+        ^
+embedding/lbl.c:355:4: note: a is assigned
+ a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * hidden_size * sizeof(real));
+   ^
+embedding/lbl.c:357:9: note: a is overwritten
+ for (a = 0; a < vocab_size; a++) for (b = 0; b < hidden_size; b++){
+        ^
+embedding/lbl.c:362:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/lbl.c:361:7: note: a is assigned
+    a = posix_memalign((void **)&hidden, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/lbl.c:362:7: note: a is overwritten
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/lbl.c:363:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < input_size; a++) for (b = 0; b < hidden_size; b++) {
+           ^
+embedding/lbl.c:362:7: note: a is assigned
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/lbl.c:363:12: note: a is overwritten
+    for (a = 0; a < input_size; a++) for (b = 0; b < hidden_size; b++) {
+           ^
+embedding/lbl.c:75:14: style: The scope of the variable 'ch' can be reduced. [variableScope]
+  int a = 0, ch;
+             ^
+embedding/lbl.c:180:16: style: The scope of the variable 'hash' can be reduced. [variableScope]
+  unsigned int hash;
+               ^
+embedding/lbl.c:201:16: style: The scope of the variable 'b' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+               ^
+embedding/lbl.c:201:19: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+                  ^
+embedding/lbl.c:268:16: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, i;
+               ^
+embedding/lbl.c:420:8: style: The scope of the variable 'val1' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+       ^
+embedding/lbl.c:420:14: style: The scope of the variable 'val2' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+             ^
+embedding/lbl.c:420:20: style: The scope of the variable 'val3' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                   ^
+embedding/lbl.c:420:26: style: The scope of the variable 'val4' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                         ^
+embedding/lbl.c:421:8: style: The scope of the variable 'val5' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+       ^
+embedding/lbl.c:421:14: style: The scope of the variable 'val6' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+             ^
+embedding/lbl.c:421:20: style: The scope of the variable 'val7' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                   ^
+embedding/lbl.c:421:26: style: The scope of the variable 'val8' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                         ^
+embedding/lbl.c:742:14: style: The scope of the variable 'c' can be reduced. [variableScope]
+  long a, b, c, d;
+             ^
+embedding/lbl.c:742:17: style: The scope of the variable 'd' can be reduced. [variableScope]
+  long a, b, c, d;
+                ^
+embedding/lbl.c:743:9: style: The scope of the variable 'fo' can be reduced. [variableScope]
+  FILE *fo;
+        ^
+embedding/lbl.c:204:14: style: Local variable 'binary' shadows outer variable [shadowVariable]
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/lbl.c:40:5: note: Shadowed declaration
+int binary = 0, cbow = 1, debug_mode = 2, window = 5, min_count = 5, num_threads = 12, min_reduce = 1;
+    ^
+embedding/lbl.c:204:14: note: Shadow variable
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/lbl.c:797:25: style: Local variable 'iter' shadows outer variable [shadowVariable]
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/lbl.c:43:51: note: Shadowed declaration
+long long train_words = 0, word_count_actual = 0, iter = 5, file_size = 0, classes = 0;
+                                                  ^
+embedding/lbl.c:797:25: note: Shadow variable
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/nnlm.c:134:5: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+    vocab = (struct vocab_word *)realloc(vocab, vocab_max_size * sizeof(struct vocab_word));
+    ^
+embedding/nnlm.c:169:3: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+  vocab = (struct vocab_word *)realloc(vocab, (vocab_size + 1) * sizeof(struct vocab_word));
+  ^
+embedding/nnlm.c:398:8: portability: Casting from double * to unsigned long * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i = *(uint64_t *) &y;
+       ^
+embedding/nnlm.c:400:8: portability: Casting between unsigned long * and double * which have an incompatible binary data representation. [invalidPointerCast]
+  y = *(double *) &i;
+       ^
+embedding/nnlm.c:410:9: portability: Casting from float * to unsigned int * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i  = *(uint32_t *) &y;
+        ^
+embedding/nnlm.c:412:9: portability: Casting between unsigned int * and float * which have an incompatible binary data representation. [invalidPointerCast]
+  y  = *(float *) &i;
+        ^
+embedding/nnlm.c:345:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/nnlm.c:344:5: note: a is assigned
+  a = posix_memalign((void **)&syn0, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/nnlm.c:345:5: note: a is overwritten
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/nnlm.c:369:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/nnlm.c:345:5: note: a is assigned
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/nnlm.c:369:10: note: a is overwritten
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/nnlm.c:350:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/nnlm.c:348:7: note: a is assigned
+    a = posix_memalign((void **)&syn1, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/nnlm.c:350:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/nnlm.c:355:4: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+ a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * hidden_size * sizeof(real));
+   ^
+embedding/nnlm.c:354:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg, 128, (long long)vocab_size * hidden_size * sizeof(real));
+      ^
+embedding/nnlm.c:355:4: note: a is overwritten
+ a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * hidden_size * sizeof(real));
+   ^
+embedding/nnlm.c:357:9: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+ for (a = 0; a < vocab_size; a++) for (b = 0; b < hidden_size; b++){
+        ^
+embedding/nnlm.c:355:4: note: a is assigned
+ a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * hidden_size * sizeof(real));
+   ^
+embedding/nnlm.c:357:9: note: a is overwritten
+ for (a = 0; a < vocab_size; a++) for (b = 0; b < hidden_size; b++){
+        ^
+embedding/nnlm.c:362:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/nnlm.c:361:7: note: a is assigned
+    a = posix_memalign((void **)&hidden, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/nnlm.c:362:7: note: a is overwritten
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/nnlm.c:363:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < input_size; a++) for (b = 0; b < hidden_size; b++) {
+           ^
+embedding/nnlm.c:362:7: note: a is assigned
+    a = posix_memalign((void **)&hidden_gdsq, 128, (long long)input_size * hidden_size * sizeof(real));
+      ^
+embedding/nnlm.c:363:12: note: a is overwritten
+    for (a = 0; a < input_size; a++) for (b = 0; b < hidden_size; b++) {
+           ^
+embedding/nnlm.c:75:14: style: The scope of the variable 'ch' can be reduced. [variableScope]
+  int a = 0, ch;
+             ^
+embedding/nnlm.c:180:16: style: The scope of the variable 'hash' can be reduced. [variableScope]
+  unsigned int hash;
+               ^
+embedding/nnlm.c:201:16: style: The scope of the variable 'b' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+               ^
+embedding/nnlm.c:201:19: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+                  ^
+embedding/nnlm.c:268:16: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, i;
+               ^
+embedding/nnlm.c:420:8: style: The scope of the variable 'val1' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+       ^
+embedding/nnlm.c:420:14: style: The scope of the variable 'val2' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+             ^
+embedding/nnlm.c:420:20: style: The scope of the variable 'val3' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                   ^
+embedding/nnlm.c:420:26: style: The scope of the variable 'val4' can be reduced. [variableScope]
+  real val1, val2, val3, val4;
+                         ^
+embedding/nnlm.c:421:8: style: The scope of the variable 'val5' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+       ^
+embedding/nnlm.c:421:14: style: The scope of the variable 'val6' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+             ^
+embedding/nnlm.c:421:20: style: The scope of the variable 'val7' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                   ^
+embedding/nnlm.c:421:26: style: The scope of the variable 'val8' can be reduced. [variableScope]
+  real val5, val6, val7, val8;
+                         ^
+embedding/nnlm.c:728:14: style: The scope of the variable 'c' can be reduced. [variableScope]
+  long a, b, c, d;
+             ^
+embedding/nnlm.c:728:17: style: The scope of the variable 'd' can be reduced. [variableScope]
+  long a, b, c, d;
+                ^
+embedding/nnlm.c:729:9: style: The scope of the variable 'fo' can be reduced. [variableScope]
+  FILE *fo;
+        ^
+embedding/nnlm.c:204:14: style: Local variable 'binary' shadows outer variable [shadowVariable]
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/nnlm.c:40:5: note: Shadowed declaration
+int binary = 0, cbow = 1, debug_mode = 2, window = 5, min_count = 5, num_threads = 12, min_reduce = 1;
+    ^
+embedding/nnlm.c:204:14: note: Shadow variable
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/nnlm.c:782:25: style: Local variable 'iter' shadows outer variable [shadowVariable]
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/nnlm.c:43:51: note: Shadowed declaration
+long long train_words = 0, word_count_actual = 0, iter = 5, file_size = 0, classes = 0;
+                                                  ^
+embedding/nnlm.c:782:25: note: Shadow variable
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/order.c:134:5: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+    vocab = (struct vocab_word *)realloc(vocab, vocab_max_size * sizeof(struct vocab_word));
+    ^
+embedding/order.c:169:3: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+  vocab = (struct vocab_word *)realloc(vocab, (vocab_size + 1) * sizeof(struct vocab_word));
+  ^
+embedding/order.c:392:8: portability: Casting from double * to unsigned long * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i = *(uint64_t *) &y;
+       ^
+embedding/order.c:394:8: portability: Casting between unsigned long * and double * which have an incompatible binary data representation. [invalidPointerCast]
+  y = *(double *) &i;
+       ^
+embedding/order.c:404:9: portability: Casting from float * to unsigned int * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i  = *(uint32_t *) &y;
+        ^
+embedding/order.c:406:9: portability: Casting between unsigned int * and float * which have an incompatible binary data representation. [invalidPointerCast]
+  y  = *(float *) &i;
+        ^
+embedding/order.c:345:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/order.c:344:5: note: a is assigned
+  a = posix_memalign((void **)&syn0, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/order.c:345:5: note: a is overwritten
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/order.c:363:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/order.c:345:5: note: a is assigned
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/order.c:363:10: note: a is overwritten
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/order.c:350:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/order.c:348:7: note: a is assigned
+    a = posix_memalign((void **)&syn1, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/order.c:350:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/order.c:355:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * input_size * sizeof(real));
+      ^
+embedding/order.c:354:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg, 128, (long long)vocab_size * input_size * sizeof(real));
+      ^
+embedding/order.c:355:7: note: a is overwritten
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * input_size * sizeof(real));
+      ^
+embedding/order.c:357:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < input_size; b++){
+           ^
+embedding/order.c:355:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * input_size * sizeof(real));
+      ^
+embedding/order.c:357:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < input_size; b++){
+           ^
+embedding/order.c:75:14: style: The scope of the variable 'ch' can be reduced. [variableScope]
+  int a = 0, ch;
+             ^
+embedding/order.c:180:16: style: The scope of the variable 'hash' can be reduced. [variableScope]
+  unsigned int hash;
+               ^
+embedding/order.c:201:16: style: The scope of the variable 'b' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+               ^
+embedding/order.c:201:19: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+                  ^
+embedding/order.c:268:16: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, i;
+               ^
+embedding/order.c:651:14: style: The scope of the variable 'c' can be reduced. [variableScope]
+  long a, b, c, d;
+             ^
+embedding/order.c:651:17: style: The scope of the variable 'd' can be reduced. [variableScope]
+  long a, b, c, d;
+                ^
+embedding/order.c:652:9: style: The scope of the variable 'fo' can be reduced. [variableScope]
+  FILE *fo;
+        ^
+embedding/order.c:204:14: style: Local variable 'binary' shadows outer variable [shadowVariable]
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/order.c:40:5: note: Shadowed declaration
+int binary = 0, cbow = 1, debug_mode = 2, window = 5, min_count = 5, num_threads = 12, min_reduce = 1;
+    ^
+embedding/order.c:204:14: note: Shadow variable
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/order.c:705:25: style: Local variable 'iter' shadows outer variable [shadowVariable]
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/order.c:43:51: note: Shadowed declaration
+long long train_words = 0, word_count_actual = 0, iter = 5, file_size = 0, classes = 0;
+                                                  ^
+embedding/order.c:705:25: note: Shadow variable
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/word2vec.c:134:5: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+    vocab = (struct vocab_word *)realloc(vocab, vocab_max_size * sizeof(struct vocab_word));
+    ^
+embedding/word2vec.c:169:3: error: Common realloc mistake: 'vocab' nulled but not freed upon failure [memleakOnRealloc]
+  vocab = (struct vocab_word *)realloc(vocab, (vocab_size + 1) * sizeof(struct vocab_word));
+  ^
+embedding/word2vec.c:392:8: portability: Casting from double * to unsigned long * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i = *(uint64_t *) &y;
+       ^
+embedding/word2vec.c:394:8: portability: Casting between unsigned long * and double * which have an incompatible binary data representation. [invalidPointerCast]
+  y = *(double *) &i;
+       ^
+embedding/word2vec.c:404:9: portability: Casting from float * to unsigned int * is not portable due to different binary data representations on different platforms. [invalidPointerCast]
+  i  = *(uint32_t *) &y;
+        ^
+embedding/word2vec.c:406:9: portability: Casting between unsigned int * and float * which have an incompatible binary data representation. [invalidPointerCast]
+  y  = *(float *) &i;
+        ^
+embedding/word2vec.c:345:5: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/word2vec.c:344:5: note: a is assigned
+  a = posix_memalign((void **)&syn0, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/word2vec.c:345:5: note: a is overwritten
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/word2vec.c:363:10: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/word2vec.c:345:5: note: a is assigned
+  a = posix_memalign((void **)&syn0_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+    ^
+embedding/word2vec.c:363:10: note: a is overwritten
+  for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++) {
+         ^
+embedding/word2vec.c:350:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/word2vec.c:348:7: note: a is assigned
+    a = posix_memalign((void **)&syn1, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/word2vec.c:350:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++)
+           ^
+embedding/word2vec.c:355:7: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/word2vec.c:354:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/word2vec.c:355:7: note: a is overwritten
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/word2vec.c:357:12: style: Variable 'a' is reassigned a value before the old one has been used. [redundantAssignment]
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++){
+           ^
+embedding/word2vec.c:355:7: note: a is assigned
+    a = posix_memalign((void **)&syn1neg_gdsq, 128, (long long)vocab_size * layer1_size * sizeof(real));
+      ^
+embedding/word2vec.c:357:12: note: a is overwritten
+    for (a = 0; a < vocab_size; a++) for (b = 0; b < layer1_size; b++){
+           ^
+embedding/word2vec.c:75:14: style: The scope of the variable 'ch' can be reduced. [variableScope]
+  int a = 0, ch;
+             ^
+embedding/word2vec.c:180:16: style: The scope of the variable 'hash' can be reduced. [variableScope]
+  unsigned int hash;
+               ^
+embedding/word2vec.c:201:16: style: The scope of the variable 'b' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+               ^
+embedding/word2vec.c:201:19: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, b, i, min1i, min2i, pos1, pos2, point[MAX_CODE_LENGTH];
+                  ^
+embedding/word2vec.c:268:16: style: The scope of the variable 'i' can be reduced. [variableScope]
+  long long a, i;
+               ^
+embedding/word2vec.c:649:14: style: The scope of the variable 'c' can be reduced. [variableScope]
+  long a, b, c, d;
+             ^
+embedding/word2vec.c:649:17: style: The scope of the variable 'd' can be reduced. [variableScope]
+  long a, b, c, d;
+                ^
+embedding/word2vec.c:650:9: style: The scope of the variable 'fo' can be reduced. [variableScope]
+  FILE *fo;
+        ^
+embedding/word2vec.c:204:14: style: Local variable 'binary' shadows outer variable [shadowVariable]
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/word2vec.c:40:5: note: Shadowed declaration
+int binary = 0, cbow = 1, debug_mode = 2, window = 5, min_count = 5, num_threads = 12, min_reduce = 1;
+    ^
+embedding/word2vec.c:204:14: note: Shadow variable
+  long long *binary = (long long *)calloc(vocab_size * 2 + 1, sizeof(long long));
+             ^
+embedding/word2vec.c:708:25: style: Local variable 'iter' shadows outer variable [shadowVariable]
+    int clcn = classes, iter = 10, closeid;
+                        ^
+embedding/word2vec.c:43:51: note: Shadowed declaration
+long long train_words = 0, word_count_actual = 0, iter = 5, file_size = 0, classes = 0;
+                                                  ^
+embedding/word2vec.c:708:25: note: Shadow variable
+    int clcn = classes, iter = 10, closeid;
+                        ^
+evaluation/avg/avg_embedding.cpp:116:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(f, "%s%c", str, &ch);
+  ^
+evaluation/avg/avg_embedding.cpp:45:10: style: Class 'embedding_t' is unsafe, 'embedding_t::value' can leak by wrong usage. [unsafeClassCanLeak]
+ double *value; //所有的参数
+         ^
+evaluation/avg/avg_embedding.cpp:56:13: style: The scope of the variable 'ch' can be reduced. [variableScope]
+ int a = 0, ch;
+            ^
+evaluation/avg/avg_embedding.cpp:114:11: style: Local variable 'b' shadows outer variable [shadowVariable]
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/avg/avg_embedding.cpp:208:13: note: Shadowed declaration
+vector<int> b; //目标矩阵[样本数] 训练集
+            ^
+evaluation/avg/avg_embedding.cpp:114:11: note: Shadow variable
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/avg/avg_embedding.cpp:304:78: style: Parameter 'b' can be declared with const [constParameter]
+void WriteData(const char *file, vector<vector<double> > &data, vector<int> &b) {
+                                                                             ^
+evaluation/cnn/fileutil.hpp:49:2: style: Class 'WordCh' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+ WordCh(char *w) {
+ ^
+evaluation/cnn/fileutil.hpp:427:2: portability: %d in format string (no. 1) requires 'int' but the argument type is 'std::size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+ printf("dict: total:%d, pre-trained:%d, avg:%lf, stddev:%lf, stddev_rand:%lf\n", dict.size(), pre,
+ ^
+evaluation/cnn/cnn_senna.cpp:717:2: portability: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'std::size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+ printf("%lu, %lu, %lu\n", data.size(), vdata.size(), tdata.size());
+ ^
+evaluation/cnn/cnn_senna.cpp:717:2: portability: %lu in format string (no. 2) requires 'unsigned long' but the argument type is 'std::size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+ printf("%lu, %lu, %lu\n", data.size(), vdata.size(), tdata.size());
+ ^
+evaluation/cnn/cnn_senna.cpp:717:2: portability: %lu in format string (no. 3) requires 'unsigned long' but the argument type is 'std::size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+ printf("%lu, %lu, %lu\n", data.size(), vdata.size(), tdata.size());
+ ^
+evaluation/cnn/fileutil.hpp:145:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(f, "%s%c", str, &ch);
+  ^
+evaluation/cnn/fileutil.hpp:175:9: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+ while (fscanf(f, "%s%d", str, &val) != EOF) {
+        ^
+evaluation/cnn/fileutil.hpp:310:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(f, "%s%c", str, &ch);
+  ^
+evaluation/cnn/fileutil.hpp:32:10: style: Class 'embedding_t' is unsafe, 'embedding_t::value' can leak by wrong usage. [unsafeClassCanLeak]
+ double *value; //所有的参数
+         ^
+evaluation/cnn/fileutil.hpp:87:13: style: The scope of the variable 'ch' can be reduced. [variableScope]
+ int a = 0, ch;
+            ^
+evaluation/cnn/fileutil.hpp:357:6: style: The scope of the variable 'threshold' can be reduced. [variableScope]
+ int threshold = 3; //words exist less than *threshold* times in train will may be consider as UNKNOWN.
+     ^
+evaluation/cnn/cnn_senna.cpp:118:9: style: The scope of the variable 'val1' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+        ^
+evaluation/cnn/cnn_senna.cpp:118:15: style: The scope of the variable 'val2' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+              ^
+evaluation/cnn/cnn_senna.cpp:118:21: style: The scope of the variable 'val3' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+                    ^
+evaluation/cnn/cnn_senna.cpp:118:27: style: The scope of the variable 'val4' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+                          ^
+evaluation/cnn/cnn_senna.cpp:119:9: style: The scope of the variable 'val5' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+        ^
+evaluation/cnn/cnn_senna.cpp:119:15: style: The scope of the variable 'val6' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+              ^
+evaluation/cnn/cnn_senna.cpp:119:21: style: The scope of the variable 'val7' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+                    ^
+evaluation/cnn/cnn_senna.cpp:119:27: style: The scope of the variable 'val8' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+                          ^
+evaluation/cnn/fileutil.hpp:143:11: style: Local variable 'b' shadows outer variable [shadowVariable]
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/cnn/cnn_senna.cpp:57:13: note: Shadowed declaration
+vector<int> b; //目标矩阵[样本数] 训练集
+            ^
+evaluation/cnn/fileutil.hpp:143:11: note: Shadow variable
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/cnn/fileutil.hpp:308:11: style: Local variable 'b' shadows outer variable [shadowVariable]
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/cnn/cnn_senna.cpp:57:13: note: Shadowed declaration
+vector<int> b; //目标矩阵[样本数] 训练集
+            ^
+evaluation/cnn/fileutil.hpp:308:11: note: Shadow variable
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/cnn/fileutil.hpp:502:6: style: Local variable 'vector_size' shadows outer variable [shadowVariable]
+ int vector_size;
+     ^
+evaluation/cnn/cnn_senna.cpp:35:5: note: Shadowed declaration
+int vector_size; //一个词单元的向量大小 = 词向量大小（约50） + 所有特征的大小（约10）
+    ^
+evaluation/cnn/fileutil.hpp:502:6: note: Shadow variable
+ int vector_size;
+     ^
+evaluation/cnn/fileutil.hpp:509:7: style: Local variable 'dict' shadows outer variable [shadowVariable]
+ auto dict = CreateDict(train_words, embedding_words, dict_type);
+      ^
+evaluation/cnn/fileutil.hpp:24:18: note: Shadowed declaration
+map<string, int> dict; //字典中所有的字 str->id
+                 ^
+evaluation/cnn/fileutil.hpp:509:7: note: Shadow variable
+ auto dict = CreateDict(train_words, embedding_words, dict_type);
+      ^
+evaluation/cnn/cnn_senna.cpp:296:14: style: Local variable 'dx' shadows outer variable [shadowVariable]
+      double dx = dh[i] * B[i*input_size + xp];
+             ^
+evaluation/cnn/cnn_senna.cpp:289:11: note: Shadowed declaration
+   double dx[MAX_F] = { 0 };
+          ^
+evaluation/cnn/cnn_senna.cpp:296:14: note: Shadow variable
+      double dx = dh[i] * B[i*input_size + xp];
+             ^
+evaluation/cnn/cnn_senna.cpp:524:12: style: Local variable 'i' shadows outer variable [shadowVariable]
+  for (int i = 0; i < hw; i++)
+           ^
+evaluation/cnn/cnn_senna.cpp:520:14: note: Shadowed declaration
+ for (size_t i = 0; i < data.size(); i++) {
+             ^
+evaluation/cnn/cnn_senna.cpp:524:12: note: Shadow variable
+  for (int i = 0; i < hw; i++)
+           ^
+evaluation/cnn/cnn_senna.cpp:529:12: style: Local variable 'i' shadows outer variable [shadowVariable]
+  for (int i = 0; i < hw; i++)
+           ^
+evaluation/cnn/cnn_senna.cpp:520:14: note: Shadowed declaration
+ for (size_t i = 0; i < data.size(); i++) {
+             ^
+evaluation/cnn/cnn_senna.cpp:529:12: note: Shadow variable
+  for (int i = 0; i < hw; i++)
+           ^
+evaluation/cnn/cnn_senna.cpp:289:21: style: Variable 'dx' is assigned a value that is never used. [unreadVariable]
+   double dx[MAX_F] = { 0 };
+                    ^
+evaluation/pos/fileutil.hpp:27:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(f, "%s%c", str, &ch);
+  ^
+evaluation/pos/sennaseg.cpp:36:10: style: Class 'embedding_t' is unsafe, 'embedding_t::value' can leak by wrong usage. [unsafeClassCanLeak]
+ double *value; //所有的参数
+         ^
+evaluation/pos/fileutil.hpp:130:5: style: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+    break;
+    ^
+evaluation/pos/fileutil.hpp:55:13: style: The scope of the variable 'ch' can be reduced. [variableScope]
+ int a = 0, ch;
+            ^
+evaluation/pos/sennaseg.cpp:126:9: style: The scope of the variable 'val1' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+        ^
+evaluation/pos/sennaseg.cpp:126:15: style: The scope of the variable 'val2' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+              ^
+evaluation/pos/sennaseg.cpp:126:21: style: The scope of the variable 'val3' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+                    ^
+evaluation/pos/sennaseg.cpp:126:27: style: The scope of the variable 'val4' can be reduced. [variableScope]
+ double val1, val2, val3, val4;
+                          ^
+evaluation/pos/sennaseg.cpp:127:9: style: The scope of the variable 'val5' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+        ^
+evaluation/pos/sennaseg.cpp:127:15: style: The scope of the variable 'val6' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+              ^
+evaluation/pos/sennaseg.cpp:127:21: style: The scope of the variable 'val7' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+                    ^
+evaluation/pos/sennaseg.cpp:127:27: style: The scope of the variable 'val8' can be reduced. [variableScope]
+ double val5, val6, val7, val8;
+                          ^
+evaluation/pos/fileutil.hpp:25:11: style: Local variable 'b' shadows outer variable [shadowVariable]
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/pos/sennaseg.cpp:61:6: note: Shadowed declaration
+int *b; //目标矩阵[样本数] 训练集
+     ^
+evaluation/pos/fileutil.hpp:25:11: note: Shadow variable
+ for (int b = 0; b < wordNum; b++) {
+          ^
+evaluation/pos/fileutil.hpp:43:11: style: Local variable 'b' shadows outer variable [shadowVariable]
+ for (int b = wordNum; b < wordNum + 2; b++)
+          ^
+evaluation/pos/sennaseg.cpp:61:6: note: Shadowed declaration
+int *b; //目标矩阵[样本数] 训练集
+     ^
+evaluation/pos/fileutil.hpp:43:11: note: Shadow variable
+ for (int b = wordNum; b < wordNum + 2; b++)
+          ^
+evaluation/pos/sennaseg.cpp:294:9: style: Variable 'hw' is assigned a value that is never used. [unreadVariable]
+ int hw = (window_size-1)/2;
+        ^
+evaluation/pos/sennaseg.cpp:300:12: style: Variable 'index' is assigned a value that is never used. [unreadVariable]
+ int index = 0;
+           ^
+evaluation/pos/sennaseg.cpp:298:6: style: Unused variable: ans [unusedVariable]
+ int ans[2000];
+     ^
+evaluation/syn_sem/compute-accuracy-txt.c:56:5: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+    fscanf(f, "%s%c", &vocab[b * max_w], &ch);
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:69:5: warning: scanf() without field width limits can crash with huge input data. [invalidscanf]
+    scanf("%s", st1);
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:78:7: warning: scanf() without field width limits can crash with huge input data. [invalidscanf]
+      scanf("%s", st1);
+      ^
+evaluation/syn_sem/compute-accuracy-txt.c:86:5: warning: scanf() without field width limits can crash with huge input data. [invalidscanf]
+    scanf("%s", st2);
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:88:5: warning: scanf() without field width limits can crash with huge input data. [invalidscanf]
+    scanf("%s", st3);
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:90:5: warning: scanf() without field width limits can crash with huge input data. [invalidscanf]
+    scanf("%s", st4);
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:53:5: error: Resource leak: f [resourceLeak]
+    return -1;
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:53:5: error: Memory leak: vocab [memleak]
+    return -1;
+    ^
+evaluation/syn_sem/compute-accuracy-txt.c:30:15: style: The scope of the variable 'len' can be reduced. [variableScope]
+  float dist, len, bestd[N], vec[max_size];
+              ^
+evaluation/tfl/toefl.cpp:32:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(f, "%s%c", str, &ch);
+  ^
+evaluation/tfl/toefl.cpp:91:9: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+ while (fscanf(fd, "%s%s", w1, w2) != EOF) {
+        ^
+evaluation/tfl/toefl.cpp:96:4: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+   fscanf(fd, "%s%s", w1, w2);
+   ^
+evaluation/tfl/toefl.cpp:100:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(fd, "%s", w1);
+  ^
+evaluation/tfl/toefl.cpp:67:51: style: Parameter 'b' can be declared with const [constParameter]
+double pearson(vector<double> &a, vector<double> &b) {
+                                                  ^
+evaluation/tfl/toefl.cpp:89:9: style: Unused variable: val [unusedVariable]
+ double val;
+        ^
+evaluation/tfl/toefl.cpp:109:75: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for (map<string, double*>::iterator it = dict.begin(); it != dict.end(); it++) {
+                                                                          ^
+evaluation/ws/ws.cpp:31:3: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+  fscanf(f, "%s%c", str, &ch);
+  ^
+evaluation/ws/ws.cpp:90:9: warning: fscanf() without field width limits can crash with huge input data. [invalidscanf]
+ while (fscanf(fd, "%s%s%lf", w1, w2, &val) != EOF) {
+        ^
+evaluation/ws/ws.cpp:66:51: style: Parameter 'b' can be declared with const [constParameter]
+double pearson(vector<double> &a, vector<double> &b) {
+                                                  ^
+evaluation/ws/ws.cpp:107:75: performance: Prefer prefix ++/-- operators for non-primitive types. [postfixOperator]
+ for (map<string, double*>::iterator it = dict.begin(); it != dict.end(); it++) {
+                                                                          ^
+evaluation/tfl/toefl.cpp:9:1: error: The one definition rule is violated, different classes/structs have the same name 'node' [ctuOneDefinitionRuleViolation]
+struct node {
+^
+evaluation/ws/ws.cpp:9:1: note: The one definition rule is violated, different classes/structs have the same name 'node'
+struct node {
+^
+evaluation/tfl/toefl.cpp:9:1: note: The one definition rule is violated, different classes/structs have the same name 'node'
+struct node {
+^
+evaluation/cnn/fileutil.hpp:246:19: error: Null pointer dereference: file_name [ctunullpointer]
+ FILE *fi = fopen(file_name, "rb");
+                  ^
+evaluation/cnn/cnn_senna.cpp:586:15: note: Calling function ReadAllFiles, 4th argument is null
+  ReadAllFiles(train_file, test_file, atoi(argv[8]), NULL, argv[1], 0, words,
+              ^
+evaluation/cnn/fileutil.hpp:476:3: note: Calling function ReadDocs, 1st argument is null
+  ReadDocs(dev_file, dev_doc, dev_label, "Dev");
+  ^
+evaluation/cnn/fileutil.hpp:246:19: note: Dereferencing argument file_name that is null
+ FILE *fi = fopen(file_name, "rb");
+                  ^
+evaluation/cnn/cnn_senna.cpp:461:0: style: The function 'SimplifyData' is never used. [unusedFunction]
+
+^
+evaluation/cnn/cnn_senna.cpp:469:0: style: The function 'SimplifyDataWordCh' is never used. [unusedFunction]
+
+^
+embedding/cw.c:508:0: style: The function 'fastback2' is never used. [unusedFunction]
+
+^
+evaluation/cnn/cnn_senna.cpp:108:0: style: The function 'hardtanh' is never used. [unusedFunction]
+
+^
+evaluation/avg/avg_embedding.cpp:254:0: style: The function 'readFile' is never used. [unusedFunction]
+
+^
+evaluation/cnn/cnn_senna.cpp:104:0: style: The function 'sigmoid' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
